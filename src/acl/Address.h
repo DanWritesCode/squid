@@ -31,7 +31,7 @@ public:
     /// computes Ip::Address corresponding to this tcp_outgoing_address directive
     /// \param request optional (adapted) client request
     /// \returns std::nullopt if this directive should be skipped
-    std::optional<Ip::Address> findAddressCandidate(HttpRequest *) const;
+    std::optional<Ip::Address> findAddressCandidate(const HttpRequest &) const;
 
     Acl::Address *next;
     ACLList *aclList;

@@ -23,11 +23,11 @@ Acl::Address::~Address()
 }
 
 std::optional<Ip::Address>
-Acl::Address::findAddressCandidate(HttpRequest * const request) const
+Acl::Address::findAddressCandidate(const HttpRequest &request) const
 {
     if (std::holds_alternative<MatchClientTcpDst>(addressSource)) {
-        if (request && request->clientConnectionManager.valid()) {
-            auto localAddr = request->clientConnectionManager->clientConnection->local;
+        if (request.clientConnectionManager.valid()) {
+            auto localAddr = request.clientConnectionManager->clientConnection->local;
             localAddr.port(0);
             return localAddr;
         }

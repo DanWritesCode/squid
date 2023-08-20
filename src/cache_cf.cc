@@ -1581,6 +1581,7 @@ dump_acl_address(StoreEntry * entry, const char *name, Acl::Address * head)
     for (Acl::Address *l = head; l; l = l->next) {
         PackableStream os(*entry);
         os << name << ' ' << l->addressSource;
+        os.flush();
 
         dump_acl_list(entry, l->aclList);
 
