@@ -2861,7 +2861,7 @@ DOC_START
 			(re)configuration time, using getaddrinfo(3) or a similar blocking
 			service. DNS resolution errors are fatal.
 
-		match_client_tcp_dst: This keyword instructs Squid to postpone
+		client_tcp_dst: This keyword instructs Squid to postpone
 			outgoing address determination until this directive is actually
 			used for forwarding a client request. At that time, Squid attempts
 			to set the outgoing IP address to the TCP client destination

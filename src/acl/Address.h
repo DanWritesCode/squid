@@ -36,7 +36,7 @@ public:
     Acl::Address *next;
     ACLList *aclList;
 
-    /// an AddressSource variant representing match_client_tcp_dst configuration
+    /// an AddressSource variant representing client_tcp_dst configuration
     struct MatchClientTcpDst {};
 
     /// an outgoing address value or value computation algorithm

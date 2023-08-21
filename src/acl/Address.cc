@@ -33,7 +33,7 @@ Acl::Address::findAddressCandidate(const HttpRequest &request) const
         }
 
         // not DBG_IMPORTANT or Assure() because the client may simply be gone by now
-        debugs(17, 3, "WARNING: Skipping tcp_outgoing_address match_client_tcp_dst rule");
+        debugs(17, 3, "WARNING: Skipping tcp_outgoing_address client_tcp_dst rule");
         return std::nullopt;
     }
 
@@ -44,7 +44,7 @@ std::ostream &
 Acl::operator <<(std::ostream &os, const Address::AddressSource &source)
 {
     if (std::holds_alternative<Address::MatchClientTcpDst>(source)) {
-        os << "match_client_tcp_dst";
+        os << "client_tcp_dst";
         return os;
     }
 

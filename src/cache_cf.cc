@@ -1595,7 +1595,7 @@ parse_acl_address(Acl::Address ** head)
     Acl::Address *l = new Acl::Address;
 
     const auto token = ConfigParser::NextToken();
-    if (token && strcmp(token, "match_client_tcp_dst") == 0) {
+    if (token && strcmp(token, "client_tcp_dst") == 0) {
         l->addressSource = Acl::Address::MatchClientTcpDst{};
     } else {
         Ip::Address addr;
